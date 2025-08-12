@@ -4,7 +4,8 @@ function ctrl_c(){
 
 }
 function helpPanel(){
-    echo -e "\n\n[!]Panel De Ayuda: " 
+    echo -e "\n\n[!]Panel De Ayuda:\n "
+    exit 1 
 }
 #ctrl_c
 trap ctrl_c INT
