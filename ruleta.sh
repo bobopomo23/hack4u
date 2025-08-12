@@ -8,14 +8,31 @@ yellowColour="\e[0;33m\033[1m"
 purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
+
 function martingala (){
-    echo -e "\nDinero Actual $money$\n"
-    echo -ne "cuanto Dinero Tienes Pensado Apostar? ->" && read initial_be
-    echo -ne "A Que Deseas Apostar Continuamente -> (Par/Impar)" && read par_impar
+    echo -e "\n${yellowColour}Dinero Actual${endColour} ${purpleColour}$money€${endColour}\n"
+    echo -ne "${turquoiseColour}Cuanto Dinero Tienes Pensado Apostar? ->${endColour} " && read initial_be
+    echo -ne "\n${turquoiseColour} A Que Deseas Apostar Continuamente?${endColour} -> ${purpleColour}(${endColour}${blueColour}Par${endColour}${purpleColour}/${endColour}${blueColour}Impar${endColour}${purpleColour})${endColour} " && read par_impar
+    tput civis
+    while true; do
+        random_number="$(($RANDOM % 37))"
+        echo -e  "${yelllowColour}[+]${endColour} ${grayColour}Ha salido el numero${endColour} ${blueColour}$random_number${endColour}"
+        if [ "$(($random_number % 2))" -eq 0 ]; then
+            if [ "$random_number" -eq 0 ]; then
+                echo "[+] Ha Salido El 0, Por Lo Tanto Perdemos el dinero"
+            else
+                echo "[+] el numero que a salido es par"
+            fi
+        else
+            echo "[+] El Numero que a salido es impar" 
+        fi
+    sleep 0.4
+    done
 }
+
 function ctrl_c(){
-    echo -e "\n\n${yellowColour}[!]${endColour} ${redColour}Saliendo.....${endColour}"
-    exit 1
+    echo -e "\n\n${yellowColour}[!]${endColour} ${redColour}Saliendo.....\n${endColour}"
+    tput cnorm; exit 1
 
 }
 function helpPanel(){
