@@ -81,8 +81,8 @@ function martingala(){
 
       fi
     else
-      # Nos Quedamos sin pasta ########################################################################################
-      echo -e "\n${redColour}[!] te has quedado sin pasta cabrón\n"
+      # Nos Quedamos sin ninero ########################################################################################
+      echo -e "\n${redColour}[!] te has quedado sin ninero \n"
       echo -e "${yellowColour}[+]${endColour}${grayColour} Han habido un total de ${endColour}${yellowColour}$(($play_counter-1))${endColour}${grayColour} jugadas${endColour}"
       echo -e "${yellowColour}[+]${endColour}${grayColour} A continuación se van a mostrar las malas jugadas consecutivas que han salido:${endColour}\n"
       echo -e "${blueColour}[ $jugadas_malas]${endColour}"
@@ -282,7 +282,7 @@ function inverseLabrouchere(){
         fi
       fi
     else
-      echo -e "\n${redColour}[!] te has quedado sin pasta cabrón\n"
+      echo -e "\n${redColour}[!] te has quedado sin ninero\n"
       echo -e "${yellowColour}[+]${endColour}${grayColour} En total han habido ${endColour}${yellowColour}$jugadas_totales${endColour}${grayColour} jugadas totales${endColour}"
       tput cnorm; exit 0
     fi
